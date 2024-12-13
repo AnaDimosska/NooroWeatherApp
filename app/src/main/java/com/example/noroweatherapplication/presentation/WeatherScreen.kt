@@ -291,7 +291,7 @@ fun WeatherDetailItem(label: String, value: String, color: Color) {
             text = value,
             style = MaterialTheme.typography.bodyMedium,
             fontWeight = FontWeight.Bold,
-            color = Color.Black // Black text for values
+            color = Color.Black
         )
     }
 

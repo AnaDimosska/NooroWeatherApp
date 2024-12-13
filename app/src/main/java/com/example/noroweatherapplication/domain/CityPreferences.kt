@@ -32,7 +32,6 @@ class CityPreferences(private val context: Context) {
     private val CITIES_KEY = stringPreferencesKey("saved_cities")
     private val gson = Gson()
 
-    // Get the saved list of cities
     val savedCities: Flow<List<CityWeather>> = context.dataStore.data.map { preferences ->
         val citiesJson = preferences[CITIES_KEY]
         if (!citiesJson.isNullOrEmpty()) {
@@ -42,7 +41,6 @@ class CityPreferences(private val context: Context) {
         }
     }
 
-    // Save a city with its weather data
     suspend fun saveCity(cityWeather: CityWeather) {
         context.dataStore.edit { preferences ->
             val currentCities = preferences[CITIES_KEY]?.let {
@@ -52,7 +50,6 @@ class CityPreferences(private val context: Context) {
                 ) as List<CityWeather>
             } ?: emptyList()
 
-            // Add the new city if it's not already in the list
             val updatedCities = currentCities.toMutableList().apply {
                 if (none { it.name == cityWeather.name }) add(cityWeather)
             }
