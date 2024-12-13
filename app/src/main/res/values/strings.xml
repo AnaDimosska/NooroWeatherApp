@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NoroWeatherApplication</string>
+
+    <string name="search_location">Search Location</string>
+    <string name="no_city_saved">No city saved.</string>
+    <string name="search_city_prompt">Search for a city to see the weather.</string>
+    <string name="humidity">Humidity</string>
+    <string name="uv">UV</string>
+    <string name="feels_like">Feels like</string>
+</resources>
